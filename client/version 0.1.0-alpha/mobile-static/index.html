@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WintoBlox - Alpha</title>
+    <link rel="stylesheet" href="css/vibor-ystroistva.css">
+</head>
+<body>
+    <div class="vibor-container">
+        <div class="vibor-card">
+            <div class="logo-wrapper">
+                <img src="icons/logos/bolshoe_logo.svg" alt="WintoBlox" class="main-logo">
+            </div>
+            <h1 class="vibor-title">WintoBlox</h1>
+            <p class="vibor-subtitle">Выберите ваше устройство</p>
+            <div class="vibor-buttons">
+                <button class="vibor-btn" onclick="window.location.href='lobby-mobile.html'">
+                    <img src="icons/logos/phone.svg" alt="Телефон">
+                    <span>Телефон</span>
+                </button>
+            </div>
+            <p class="vibor-hint">Мобильная версия</p>
+        </div>
+    </div>
+
+    <script>
+        // Если уже выбрано - сразу перенаправляем
+        const saved = localStorage.getItem('wintoblox-device');
+        if (saved) {
+            window.location.href = 'lobby-mobile.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: #ffffff; color: #333; overflow-x: hidden; }
+
+.vibor-container {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh;
+    background: #ffffff;
+    padding: 20px;
+}
+
+.vibor-card {
+    background: #f8f9fa;
+    border: 2px solid #e0e0e0;
+    border-radius: 24px;
+    padding: 50px;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.logo-wrapper { margin-bottom: 20px; }
+.main-logo { max-width: 280px; height: auto; }
+
+.vibor-title { font-size: 48px; font-weight: 800; color: #2e7d32; margin-bottom: 8px; }
+.vibor-subtitle { font-size: 18px; color: #666; margin-bottom: 40px; }
+
+.vibor-buttons { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
+
+.vibor-btn {
+    display: flex; flex-direction: column; align-items: center; gap: 15px;
+    padding: 40px 50px; background: #2e7d32;
+    border: 2px solid #2e7d32; border-radius: 20px;
+    cursor: pointer; transition: all 0.3s; color: white;
+    font-size: 20px; font-weight: bold;
+    min-width: 180px;
+}
+.vibor-btn:hover {
+    background: #1b5e20; border-color: #1b5e20;
+    transform: translateY(-3px); box-shadow: 0 8px 20px rgba(46,125,50,0.3);
+}
+.vibor-btn img { width: 80px; height: 80px; filter: brightness(0) invert(1); }
+.vibor-btn:hover img { filter: brightness(0) invert(1); }
+
+.vibor-hint { margin-top: 30px; color: #999; font-size: 13px; }
