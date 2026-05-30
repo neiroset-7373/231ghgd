@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WintoBlox - Лобби</title>
+    <link rel="stylesheet" href="/static/css/wintoblox-lobby.css">
+</head>
+<body>
+    <div id="custom-cursor">
+        <img src="/static/icons/control/mouse.svg" alt="cursor">
+    </div>
+
+    <div class="lobby-container">
+        <div class="logo-container">
+            <img src="/static/icons/logos/logo/bolshoe_logo.svg" alt="WintoBlox" class="main-logo" id="mainLogo">
+        </div>
+
+        <div class="lobby-header">
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar">D</div>
+                <span class="user-name">User</span>
+            </div>
+            <div class="header-buttons">
+                <button class="skin-btn" onclick="changeSkin()">Сменить скин</button>
+                <button class="device-btn" onclick="resetDevice()">Сменить устройство</button>
+            </div>
+        </div>
+
+        <div class="skin-notification" id="skinNotif"></div>
+
+        <div class="games-grid">
+            <div class="game-card">
+                <div class="game-title">Побег от Бр Бр Патапима</div>
+                <div class="game-desc">Убегай от монстра!</div>
+                <button class="play-btn" onclick="playGame('computer', 'pobeg_vmesto_obby_wintoblox')">
+                    <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="white"/></svg>
+                </button>
+            </div>
+            <div class="game-card">
+                <div class="game-title">Красный цвет, зеленый цвет</div>
+                <div class="game-desc">3D игра в кальмара</div>
+                <button class="play-btn" onclick="playGame('computer', 'kalmara')">
+                    <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="white"/></svg>
+                </button>
+            </div>
+            <div class="game-card disabled">
+                <div class="game-title">Игра 3</div>
+                <div class="game-desc">Скоро...</div>
+                <button class="play-btn" disabled>
+                    <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="white"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="lobby-footer">
+            <button class="studio-btn" disabled>Winto Studio</button>
+        </div>
+    </div>
+
+    <script>
+        let skinIndex = 0;
+        const skins = ['#4ecca3', '#e94560', '#0f3460', '#00d2d3', '#ffd700'];
+        const skinNames = ['Default', 'Red', 'Blue', 'Green', 'Gold'];
+
+        function playGame(device, gameId) {
+            window.location.href = '/game/' + device + '/' + gameId;
+        }
+
+        function changeSkin() {
+            skinIndex = (skinIndex + 1) % skins.length;
+            document.getElementById('userAvatar').style.backgroundColor = skins[skinIndex];
+            const notif = document.getElementById('skinNotif');
+            notif.textContent = 'Скин: ' + skinNames[skinIndex];
+            notif.style.display = 'block';
+            setTimeout(() => notif.style.display = 'none', 1500);
+        }
+
+        function resetDevice() {
+            localStorage.removeItem('wintoblox-device');
+            window.location.href = '/';
+        }
+
+        // Смена большого логотипа каждые 2:33 (153 секунды)
+        const logos = [
+            '/static/icons/logos/logo/bolshoe_logo.svg',
+            '/static/icons/logos/logo/wintoblox_big_logo_green_and_blue.svg'
+        ];
+        let logoIdx = 0;
+        setInterval(() => {
+            logoIdx = (logoIdx + 1) % logos.length;
+            document.getElementById('mainLogo').src = logos[logoIdx];
+        }, 153000);
+
+        // Кастомный курсор
+        const cursor = document.getElementById('custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        document.body.style.cursor = 'none';
+    </script>
+</body>
+</html>
