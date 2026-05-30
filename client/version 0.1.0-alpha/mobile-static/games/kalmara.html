@@ -73,11 +73,11 @@
     <div id="pbar"><div id="pfill"></div></div>
     {% if device == 'mobile' %}
     <div id="mob">
-        <button class="mb" id="mbW"><img src="../../static/ypravlenie_knopki_strelki/vverh.svg"></button>
+        <button class="mb" id="mbW"><img src="../..static/ypravlenie_knopki_strelki/vverh.svg"></button>
         <div class="mob-row">
-            <button class="mb" id="mbA"><img src="../../static/ypravlenie_knopki_strelki/vleva.svg"></button>
-            <button class="mb" id="mbS"><img src="../../static/ypravlenie_knopki_strelki/vniz.svg"></button>
-            <button class="mb" id="mbD"><img src="../../static/ypravlenie_knopki_strelki/vprava.svg"></button>
+            <button class="mb" id="mbA"><img src="../..static/ypravlenie_knopki_strelki/vleva.svg"></button>
+            <button class="mb" id="mbS"><img src="../..static/ypravlenie_knopki_strelki/vniz.svg"></button>
+            <button class="mb" id="mbD"><img src="../..static/ypravlenie_knopki_strelki/vprava.svg"></button>
         </div>
     </div>
     <button id="mbJump">ПРЫЖОК</button>
@@ -156,7 +156,7 @@
         player.add(fallback);
 
         if (typeof THREE.GLTFLoader !== 'undefined') {
-            new THREE.GLTFLoader().load('../../static/models/source/model_1.glb', (gltf) => {
+            new THREE.GLTFLoader().load('../..static/models/source/model_1.glb', (gltf) => {
                 player.remove(fallback);
                 const model = gltf.scene;
                 const box = new THREE.Box3().setFromObject(model);
@@ -373,3 +373,4 @@
     </script>
 </body>
 </html>
+

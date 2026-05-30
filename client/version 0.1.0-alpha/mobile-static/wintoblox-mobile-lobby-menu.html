@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>WintoBlox Mobile</title>
-    <link rel="stylesheet" href="..../static/css/wintoblox-mobile-lobby-menu.css">
+    <link rel="stylesheet" href="static/css/wintoblox-mobile-lobby-menu.css">
 </head>
 <body>
     <div class="lobby-container mobile">
         <div class="logo-container">
-            <img src="..../static/icons/logos/logo/mini_logo-_2_.svg" alt="WintoBlox" class="mobile-logo" id="mobileLogo">
+            <img src="static/icons/logos/logo/mini_logo-_2_.svg" alt="WintoBlox" class="mobile-logo" id="mobileLogo">
         </div>
 
         <div class="lobby-header">
@@ -23,14 +23,14 @@
         <div class="skin-notification" id="skinNotif"></div>
 
         <div class="games-list">
-            <div class="game-card" onclick="playGame('mobile', 'pobeg_vmesto_obby_wintoblox')">
+            <div class="game-card" onclick="playGame('pobeg_vmesto_obby_wintoblox')">
                 <div class="game-info">
                     <div class="game-title">Побег от Бр Бр Патапима</div>
                     <div class="game-desc">Убегай от монстра!</div>
                 </div>
                 <div class="play-icon-small">▶</div>
             </div>
-            <div class="game-card" onclick="playGame('mobile', 'kalmara')">
+            <div class="game-card" onclick="playGame('kalmara')">
                 <div class="game-info">
                     <div class="game-title">Красный/Зеленый</div>
                     <div class="game-desc">3D игра в кальмара</div>
@@ -52,8 +52,8 @@
     </div>
 
     <script>
-        function playGame(device, gameId) {
-            window.location.href = '..../static/games/' + device + '/' + gameId;
+        function playGame(gameId) {
+            window.location.href = 'games/' + gameId + '.html';
         }
 
         function changeSkin() {

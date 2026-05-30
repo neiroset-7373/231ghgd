@@ -48,17 +48,17 @@
     <div id="dead"><h1>ТЫ ПОЙМАН!</h1><button onclick="location.reload()">ПОПРОБОВАТЬ СНОВА</button></div>
     {% if device == 'mobile' %}
     <div id="mob">
-        <button class="mb" id="mbW"><img src="../../static/ypravlenie_knopki_strelki/vverh.svg"></button>
+        <button class="mb" id="mbW"><img src="../..static/ypravlenie_knopki_strelki/vverh.svg"></button>
         <div class="mob-row">
-            <button class="mb" id="mbA"><img src="../../static/ypravlenie_knopki_strelki/vleva.svg"></button>
-            <button class="mb" id="mbS"><img src="../../static/ypravlenie_knopki_strelki/vniz.svg"></button>
-            <button class="mb" id="mbD"><img src="../../static/ypravlenie_knopki_strelki/vprava.svg"></button>
+            <button class="mb" id="mbA"><img src="../..static/ypravlenie_knopki_strelki/vleva.svg"></button>
+            <button class="mb" id="mbS"><img src="../..static/ypravlenie_knopki_strelki/vniz.svg"></button>
+            <button class="mb" id="mbD"><img src="../..static/ypravlenie_knopki_strelki/vprava.svg"></button>
         </div>
     </div>
     <button id="mbJump">ПРЫЖОК</button>
     {% endif %}
 
-    <audio id="bgMusic" src="../../static/models/patapim/brrr-brrr-patapim.mp3" loop></audio>
+    <audio id="bgMusic" src="../..static/models/patapim/brrr-brrr-patapim.mp3" loop></audio>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
@@ -181,7 +181,7 @@
         player.add(fallback);
 
         if (typeof THREE.GLTFLoader !== 'undefined') {
-            new THREE.GLTFLoader().load('../../static/models/source/model_1.glb', (gltf) => {
+            new THREE.GLTFLoader().load('../..static/models/source/model_1.glb', (gltf) => {
                 player.remove(fallback);
                 const model = gltf.scene;
                 const box = new THREE.Box3().setFromObject(model);
@@ -203,7 +203,7 @@
         patapim.add(patFallback);
 
         if (typeof THREE.GLTFLoader !== 'undefined') {
-            new THREE.GLTFLoader().load('../../static/models/patapim/brr_brr_patapim.glb', (gltf) => {
+            new THREE.GLTFLoader().load('../..static/models/patapim/brr_brr_patapim.glb', (gltf) => {
                 patapim.remove(patFallback);
                 const model = gltf.scene;
                 const box = new THREE.Box3().setFromObject(model);
@@ -393,3 +393,4 @@
     </script>
 </body>
 </html>
+
