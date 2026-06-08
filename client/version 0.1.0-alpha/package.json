@@ -1,10 +1,40 @@
 {
+  "name": "wintoblox-alpha",
+  "version": "0.1.0",
+  "description": "Wintoblox Alpha",
+  "main": "main.js",
+  "author": "Wintoblox Team",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "build": "echo Build complete",
+    "electron": "electron .",
+    "electron:build": "electron-builder --win --x64"
+  },
   "dependencies": {
+    "@capacitor/android": "^8.3.4",
     "@capacitor/cli": "^8.3.4",
     "@capacitor/core": "^8.3.4",
     "express": "^5.2.1"
   },
   "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^26.15.2",
     "typescript": "^6.0.3"
+  },
+  "build": {
+    "appId": "org.wintozo.wintoblox",
+    "productName": "Wintoblox Alpha",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "icons/logo.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
   }
 }
